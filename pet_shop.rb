@@ -41,6 +41,7 @@ def find_pet_by_name(pet_shop, pet_name)
 end
 
 def remove_pet_by_name(pet_shop, pet_name)
+  # for each pet hash in the petshop array, pets
   for pet in pet_shop[:pets]
     pet_shop[:pets].delete(pet) if pet[:name] == pet_name
   end
@@ -56,4 +57,8 @@ end
 
 def remove_customer_cash(customer, amount)
   return customer[:cash] -= amount
+end
+
+def customer_pet_count(customer)
+  return customer[:pets].length
 end
