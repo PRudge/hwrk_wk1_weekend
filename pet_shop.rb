@@ -38,7 +38,7 @@ end
 def pets_by_breed(pet_shop, pet_breed)
   # total number of a certain breed
   pets = []
-  breed_total = 0
+  
   for pet in pet_shop[:pets]
     if pet[:breed] == pet_breed
       pets << pet[:name]
