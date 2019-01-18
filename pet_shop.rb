@@ -24,23 +24,24 @@ def stock_count(pet_shop)
 end
 
 def pets_by_breed(pet_shop, pet_breed)
-  # total number of a certain breed
   pets = []
-# go thru each pet in the pets in pet_shop array
+  # go thru each pet in the pets of pet_shop array
   for pet in pet_shop[:pets]
-    if pet[:breed] == pet_breed
-      pets << pet[:name]
-    end
+    pets << pet[:name] if pet[:breed] == pet_breed
   end
   return pets
 end
 
 def find_pet_by_name(pet_shop, pet_name)
   for pet in pet_shop[:pets]
-    if pet[:name] == pet_name
-      return pet
-    end
+    return pet if pet[:name] == pet_name
   end
   # no pets found so return nil
   return nil
+end
+
+def remove_pet_by_name(pet_shop, pet_name)
+  for pet in pet_shop[:pets]
+    pet_shop[:pets].delete(pet) if pet[:name] == pet_name
+  end
 end
