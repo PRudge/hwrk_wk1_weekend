@@ -79,11 +79,10 @@ def sell_pet_to_customer(pet_shop, new_pet, customer)
     customer[:pets] << new_pet
     # add pet to pets sold
     pet_shop[:admin][:pets_sold] += 1
-    p pet_shop[:admin]
     # take funds from customer
     customer[:cash] -= new_pet[:price]
     # add the price of the new sell to the total sell
     pet_shop[:admin][:total_cash] += new_pet[:price]
   end
-  
+
 end
